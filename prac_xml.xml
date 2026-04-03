@@ -1,0 +1,37 @@
+<students>
+    <student>
+        <name>TZ M</name>
+        <education>BTech</education>
+        <age>25+</age>
+        <address>
+            <permAddress>
+                <bulding>123</bulding>
+                <city>BGL</city>
+                <pincode>54321</pincode>
+            </permAddress>
+            <currentAddress>
+                <bulding>123</bulding>
+                <city>BGL</city>
+                <pincode>54321</pincode>
+            </currentAddress>
+        </address>
+    </student>
+
+    <student>
+        <name>PC M</name>
+        <education>BTech</education>
+        <age>25+</age>
+        <address>
+            <permAddress>
+                <bulding>123</bulding>
+                <city>BGL</city>
+                <pincode>54321</pincode>
+            </permAddress>
+            <currentAddress>
+                <bulding>123</bulding>
+                <city>BGL</city>
+                <pincode>54321</pincode>
+            </currentAddress>
+        </address>
+    </student>
+</students>

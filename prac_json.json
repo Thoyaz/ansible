@@ -1,0 +1,40 @@
+{
+    "students":[
+        {
+            "name": "TZ m",
+            "age": 25,
+            "address":[
+                {
+                    "name": "perm address",
+                    "bulding": 123,
+                    "city": "BGL",
+                    "pincode": 54321
+                },
+                {
+                    "name": "current address",
+                    "bulding": 123,
+                    "city": "BGL",
+                    "pincode": 54321
+                }
+            ]
+        },
+        {
+            "name": "PC m",
+            "age": 25,
+            "address":[
+                {
+                    "name": "perm address",
+                    "bulding": 123,
+                    "city": "BGL",
+                    "pincode": 54321
+                },
+                {
+                    "name": "current address",
+                    "bulding": 123,
+                    "city": "BGL",
+                    "pincode": 54321
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+- name: student details
+  students: 
+  - name: TZ M
+    age: 25
+    role: SRE
+  address:
+  - flat_num: 123
+    city: BGL
+    pincode: 54321
+
+  - name: PC M
+    age: 20
+    role: Lead DevOps Engineer
+    address:
+    - flat_num: 456
+      city: BGL
+      pincode: 54321
