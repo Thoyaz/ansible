@@ -1,0 +1,11 @@
+- name: global vars
+  hosts: local
+  connection: local
+  vars:
+    PRACTICE: "Ansible"
+    NAME: "TZ M"
+
+  tags:
+  - name: printing global vars
+    ansible.builtin.debug:
+      msg: "Am {{ NAME }}, Practicing {{ PRACTICE }}"
