@@ -1,0 +1,17 @@
+- name: getting input while running this playbook
+  hosts: local
+  connection: local
+  vars_prompt:
+  - name: username
+    prompt: "Please enter your name"
+    private: no
+
+  - name: password
+    prompt: "please enter password"
+    private: yes
+
+  tasks:
+  - name: print username
+    ansible.builtin.debug:
+      msg: "Your username is {{ username }}, And your password is {{ password }}"
+  
