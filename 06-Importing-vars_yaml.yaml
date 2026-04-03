@@ -1,0 +1,9 @@
+- name: importing vars.yaml
+  hosts: locla
+  connection: local
+  vars_files:
+  - vars.yaml
+  tasks:
+  - name: printing values from vars.yaml
+    ansible.builtin.debug:
+      msg: "Am {{ NAME }}, Practicing {{ PRACTICE }}"
