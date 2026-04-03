@@ -5,7 +5,7 @@
     PRACTICE: "Ansible"
     NAME: "TZ M"
 
-  tags:
+  tasks:
   - name: printing global vars
     ansible.builtin.debug:
       msg: "Am {{ NAME }}, Practicing {{ PRACTICE }}"
