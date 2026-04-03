@@ -1,1 +1,8 @@
 # write a a script to print "Hello World" on the server
+- name: printing hello workd
+  hosts: local
+  connection: local
+  tasks:
+  - name: print hello world
+    ansible.builtin.debug:
+      msg: "Hello World"
