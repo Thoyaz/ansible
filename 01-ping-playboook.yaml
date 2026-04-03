@@ -1,6 +1,7 @@
 # Write a script to ping servers
 - name: ping servers
   hosts: local
+  connection: local
   tasks:
   - name: ping servers
     ansible.builtin.ping:
