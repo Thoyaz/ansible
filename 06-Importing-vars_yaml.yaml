@@ -1,5 +1,5 @@
 - name: importing vars.yaml
-  hosts: locla
+  hosts: local
   connection: local
   vars_files:
   - vars.yaml
