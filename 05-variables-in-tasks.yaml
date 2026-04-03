@@ -1,0 +1,9 @@
+- name: variables in tasks
+  hosts: local
+  connection: local
+  tasks:
+  - name: set a variable
+    vars:
+      NAME: "PC M"
+    ansible.builtin.debug:
+      msg: "The name is {{ NAME }}"
