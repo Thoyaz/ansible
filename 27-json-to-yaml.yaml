@@ -4,7 +4,7 @@
   tasks:
     - name: convert ubuntu facts json file to xml
       debug:
-        msg: "{{ lookup('file', 'ubuntu-facts.json') | frmo_json | to_xml(root='ubuntu facts') }}"
+        msg: "{{ lookup('file', 'ubuntu-facts.json') | from_json | to_xml(root='ubuntu facts') }}"
       register: ansible_facts_xml
 
     - name: Print ubuntu facts in xml
