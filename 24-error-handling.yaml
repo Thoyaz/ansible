@@ -1,5 +1,5 @@
 - name: This is try and cache in ansible
-  hosts: loclhost
+  hosts: localhost
   connection: local
   tasks:
   - block:
