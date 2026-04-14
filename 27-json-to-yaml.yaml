@@ -1,13 +1,12 @@
-# ==== NOT WORKING ====
-
-- name: Read JSON using slurp and convert to variable
+- name: demo on filters
   hosts: local
   connection: local
   tasks:
-    - name: read ubuntu yaml
-      ansible.builtin.set_fact: # setting the variable
-        student_yaml: "{{ lookup('file', 'ubuntu-facts.yaml' ) | from_yaml }}"
+  - name: read students yaml
+    ansible.builtin.set_fact: # setting the variable
+      student_yaml: "{{ lookup('file', 'ubuntu-facts.yaml' ) | from_yaml }}"
 
-    - name: convert YAML to JSON
-      ansible.builtin.debug:
-        msg: "{{ student_yaml | to_nice_json  }}"
+  - name: convert YAML to JSON
+    ansible.builtin.debug:
+      msg: "{{ student_yaml | to_nice_json  }}"
+
