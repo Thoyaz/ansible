@@ -8,13 +8,13 @@
     - httpd
   
   tasks:
-  - name: install nginx
+  - name: install tools
     ansible.builtin.package:
       name: "{{ item }}"
       state: present
     loop: "{{ tools }}"
 
-  - name: enable nginx
+  - name: start and enable tools 
     ansible.builtin.service:
       name: "{{ item }}"
       state: started
