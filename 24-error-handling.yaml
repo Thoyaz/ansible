@@ -15,5 +15,5 @@
 
     always:
       - name: Always run
-        absible.builtin.debug:
+        ansible.builtin.debug:
           msg: "Task Completed"
