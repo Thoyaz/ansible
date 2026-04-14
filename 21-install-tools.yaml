@@ -11,3 +11,9 @@
       name: "{{ item }}"
       state: present
     loop: "{{ tools }}"
+
+  - name: enable nginx
+    ansible.builtin.service:
+      name: {{ item }}
+      state: started
+      enabled: yes
