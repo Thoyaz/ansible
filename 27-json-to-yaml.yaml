@@ -6,11 +6,10 @@
   gather_facts: false
 
   tasks:
-    - name: Find out what the remote machine's mounts are
+    - name: read ubuntu facts yaml file
+      ansible.builtin.set_fact:
+        ubuntu_fact_data: "{{ lookup('file', 'ubuntu-facts.json') | from_json }}"
+    
+    - name: convert Json to YAML
       ansible.builtin.debug:
-        msg: "the value of foo.txt is {{ lookup('ansible.builtin.file', 'C:\\Users\\thugs\\Desktop\\TZ\\88S\\Ansible\\ubuntu-facts,json') }}"
-
-    - name: display multiple file contents
-      ansible.builtin.debug: var=item
-      with_file:
-        - "C:\\Users\\thugs\\Desktop\\TZ\\88S\\Ansible\\ubuntu-facts,json"
+        msg: "{{ ubuntu_fact_data | to_nice_yaml }}"
