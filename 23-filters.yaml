@@ -1,5 +1,5 @@
 - name: filters
-  hosts: loclahost
+  hosts: localhost
   connection: local
   vars:
     name_string: "This is TZ"
