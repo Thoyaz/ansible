@@ -1,0 +1,13 @@
+- name: Install Tools
+  hosts: localhost
+  connection: local
+  vars:
+    tools:
+    - nginx
+  
+  tasks:
+  - name: install nginx
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: present
+    look: tools
