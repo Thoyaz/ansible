@@ -1,0 +1,12 @@
+- name: Json to Yaml
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: convert ubuntu facts json file to xml
+      debug:
+        msg: "{{ lookup('file', 'ubuntu-facts.json') | frmo_json | to_xml(root='ubuntu facts') }}"
+      register: ansible_facts_xml
+
+    - name: Print ubuntu facts in xml
+      debug:
+        msg: "{{ ansible_facts_xml }}"
