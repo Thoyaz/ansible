@@ -1,9 +1,8 @@
 # ==== NOT WORKING ====
 
 - name: Read JSON using slurp and convert to variable
-  hosts: localhost
+  hosts: local
   connection: local
-  gather_facts: false
 
   tasks:
     - name: read ubuntu yaml
