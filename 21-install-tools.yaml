@@ -1,6 +1,7 @@
 - name: Install Tools
   hosts: localhost
   connection: local
+  become: yes
   vars:
     tools:
     - nginx
