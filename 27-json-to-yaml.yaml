@@ -6,10 +6,10 @@
   gather_facts: false
 
   tasks:
-    - name: read ubuntu facts yaml file
-      ansible.builtin.set_fact:
-        ubuntu_fact_data: "{{ lookup('file', '/ubuntu-facts.yaml') | from_yaml }}"
-    
+    - name: read ubuntu yaml
+      ansible.builtin.set_fact: # setting the variable
+        student_yaml: "{{ lookup('file', 'ubuntu-facts.yaml' ) | from_yaml }}"
+
     - name: convert YAML to JSON
-      debug:
-        msg: "{{ ubuntu_fact_data | to_nice_json }}"
+      ansible.builtin.debug:
+        msg: "{{ student_yaml | to_nice_json  }}"
