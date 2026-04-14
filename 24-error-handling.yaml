@@ -2,18 +2,18 @@
   hosts: loclhost
   connection: local
   tasks:
-  - block:
-      name: Install nginx
-      ansible.builtin.package:
-        name: nginx
-        state: present
-    
-    rescue:
-      - name: Installation Failed
-        ansible.builtin.debug:
-          msg: "Installation Failed, Please check anf verify"
+    - block:
+        name: Install nginx
+        ansible.builtin.package:
+          name: nginx
+          state: present
+      
+      rescue:
+        - name: Installation Failed
+          ansible.builtin.debug:
+            msg: "Installation Failed, Please check anf verify"
 
-    always:
-      - name: Always run
-        absible.builtin.debug:
-          msg: "Task Completed"
+      always:
+        - name: Always run
+          absible.builtin.debug:
+            msg: "Task Completed"
