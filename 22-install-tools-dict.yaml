@@ -1,0 +1,14 @@
+- name: Install Tools using dict
+  hosts: localhost
+  connection: local
+  vars:
+    tools: {
+      tool1: nginx
+    }
+
+  tasks:
+  - name: Installing Tools
+    ansible.builtin.package:
+      name: "{{ item.tool1 }}"
+      state: present
+    loop: "{{ tools }}"
