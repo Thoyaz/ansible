@@ -10,4 +10,4 @@
     ansible.builtin.package:
       name: "{{ item }}"
       state: present
-    look: tools
+    loop: tools
