@@ -1,0 +1,34 @@
+- name: data types
+  hosts: localhost
+  connection: local
+  vars:
+    name: "TZ - String"
+    male: true
+    age: 25
+    skills:
+      - Ansible
+      - Python
+      - Linux
+    address: {
+      city: "BGL",
+      state: "KA",
+      country: "India"
+    }
+  tasks:
+  - name: to print the data types data
+    ansible.builtin.debug:
+      msg: "Name is {{ name}} and am {{ age }}"
+
+  - name: Are you male
+    ansible.builtin.debug:
+      msg: "Is it true, {{ name }} is Male"
+    when: male
+
+  - name: TZ Skills are
+    ansible.builtin.debug:
+      msg: "TZ Skills are {{ item }}"
+    loop: "{{ skills}}"
+  
+  - name: TZ Address
+    ansible.builtin.debug:
+      msg: "TZ lives in {{ address.city }}, {{ address.state }}, {{ address.country }}"
