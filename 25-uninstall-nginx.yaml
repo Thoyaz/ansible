@@ -7,21 +7,27 @@
     ansible.builtin.service:
       name: nginx
       state: stopped
+    ignore_errors: yes
 
   - name: Remove (Keep Configuration Files)
     ansible.builtin.command: sudo apt remove nginx nginx-common -y
+    ignore_errors: yes
 
   - name: Purge (Complete Uninstallation)
     ansible.builtin.command: sudo apt purge nginx nginx-common -y
+    ignore_errors: yes
 
   - name: Cleanup Remaining Files
     ansible.builtin.command: sudo apt autoremove -y
+    ignore_errors: yes
 
   - name: Delete Residual Directories
     ansible.builtin.command: sudo rm -rf /etc/nginx
+    ignore_errors: yes
 
   - name: Delete Residual Directories
     ansible.builtin.command: sudo rm -rf /var/log/nginx
+    ignore_errors: yes
 
   - name: Verify Uninstallation
     ansible.builtin.command: sudo systemctl status nginx
