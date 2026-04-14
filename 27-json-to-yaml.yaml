@@ -8,7 +8,7 @@
           {{ 
             lookup('file', 'ubuntu-facts.json')
             | from_json 
-            | to_xml(root='ubuntu_facts') 
+            | ansible.utils.to_xml(root='ubuntu_facts') 
           }}
       register: ansible_facts_xml
 
