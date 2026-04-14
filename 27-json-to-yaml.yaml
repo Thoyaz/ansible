@@ -4,15 +4,23 @@
   gather_facts: false
 
   tasks:
-    - name: Slurp JSON file
+    - name: Find out what the remote machine's mounts are
       ansible.builtin.slurp:
         src: ubuntu-facts.json
-      register: json_file
+      register: mounts
 
-    - name: Decode and convert JSON
-      ansible.builtin.set_fact:
-        my_data: "{{ json_file.content | b64decode | from_json }}"
+    - name: Print returned information
+      ansible.builtin.debug:
+        msg: "{{ mounts['content'] | b64decode }}"
+    # - name: Slurp JSON file
+    #   ansible.builtin.slurp:
+    #     src: ubuntu-facts.json
+    #   register: json_file
 
-    - name: Show parsed data
-      debug:
-        var: my_data
+    # - name: Decode and convert JSON
+    #   ansible.builtin.set_fact:
+    #     my_data: "{{ json_file.content | b64decode | from_json }}"
+
+    # - name: Show parsed data
+    #   debug:
+    #     var: my_data
