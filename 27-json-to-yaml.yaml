@@ -3,7 +3,6 @@
 - name: Read JSON using slurp and convert to variable
   hosts: local
   connection: local
-
   tasks:
     - name: read ubuntu yaml
       ansible.builtin.set_fact: # setting the variable
