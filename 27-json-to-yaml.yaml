@@ -3,7 +3,7 @@
   connection: local
   tasks:
   - name: read students yaml
-    ansible.builtin.set_fact: # setting the variable
+    ansible.builtin.set_fact:
       student_yaml: "{{ lookup('file', 'ubuntufacts.yaml' ) | from_yaml }}"
 
   - name: convert YAML to JSON
