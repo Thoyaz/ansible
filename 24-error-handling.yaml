@@ -1,6 +1,7 @@
 - name: This is try and cache in ansible
   hosts: localhost
   connection: local
+  become: yes
   tasks:
   - block:
       - name: Install nginx
