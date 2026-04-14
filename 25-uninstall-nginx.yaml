@@ -26,6 +26,7 @@
   - name: Verify Uninstallation
     ansible.builtin.command: sudo systemctl status nginx
     register: nginx_status
+    ignore_errors: yes
 
   - name: Output
     ansible.builtin.debug:
