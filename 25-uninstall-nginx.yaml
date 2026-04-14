@@ -2,7 +2,7 @@
   hosts: localhost
   connection: local
   become: yes
-  task:
+  tasks:
   - name: Stop nginx 
     ansible.builtin.service:
       name: nginx
