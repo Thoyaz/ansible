@@ -8,6 +8,12 @@
     - TF
     - Git
 
+    dict_try: {
+      tool1: "Ansible",
+      tool2: "TF",
+      tool3: Git 
+    }
+
   tasks:
   - name: make string upper
     ansible.builtin.debug:
@@ -20,6 +26,15 @@
   - name: List way
     ansible.builtin.debug:
       msg: "{{ skills | join(',') }}"
-    ignore_errors: yes
+    
+  - name: Dict way
+    ansible.builtin.debug:
+      msg: "{{ dict_try | to_json }}"
+    register: dict_skillset
+
+  - name: Output of dict try
+    ansible.builtin.debug:
+      msg: "{{ dict_skillset }}"
+
 
   
