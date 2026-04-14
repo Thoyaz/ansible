@@ -9,6 +9,6 @@
   tasks:
   - name: Installing Tools
     ansible.builtin.package:
-      name: "{{ item.tool1 }}"
+      name: "{{ item.value }}"
       state: present
-    loop: "{{ tools }}"
+    loop: "{{ tools | dict2items }}"
