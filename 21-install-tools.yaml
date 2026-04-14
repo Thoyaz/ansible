@@ -4,6 +4,7 @@
   vars:
     tools:
     - nginx
+    - httpd
   
   tasks:
   - name: install nginx
