@@ -11,5 +11,5 @@
         ubuntu_fact_data: "{{ lookup('file', '/ubuntu-facts.yaml') | from_yaml }}"
     
     - name: convert YAML to JSON
-      ansible.builtin.debug:
+      debug:
         msg: "{{ ubuntu_fact_data | to_nice_json }}"
