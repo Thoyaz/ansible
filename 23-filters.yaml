@@ -1,0 +1,25 @@
+- name: filters
+  hosts: loclahost
+  connection: local
+  vars:
+    name_string: "This is TZ"
+    skills:
+    - Ansible
+    - TF
+    - Git
+
+  tasks:
+  - name: make string upper
+    ansible.builtin.debug:
+      msg: "{{ name_string | upper }}"
+
+  - name: make string lower
+    ansible.builtin.debug:
+      msg: "{{ name_string | lower }}"
+
+  - name: List way
+    ansible.builtin.debug:
+      msg: "{{ skills | join(',') }}"
+    ignore_errors: yes
+
+  
