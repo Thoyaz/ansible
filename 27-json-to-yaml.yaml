@@ -1,10 +1,18 @@
-- name: Convert JSON to XML
+- name: Read JSON using slurp and convert to variable
   hosts: localhost
   connection: local
-  vars:
-    my_data: "{{ lookup('ansible.builtin.file', 'ubuntu-facts.json') | from_json }}"
+  gather_facts: false
 
   tasks:
-    - name: convert ubuntu facts json file to xml
+    - name: Slurp JSON file
+      ansible.builtin.slurp:
+        src: ubuntu-facts.json
+      register: json_file
+
+    - name: Decode and convert JSON
+      ansible.builtin.set_fact:
+        my_data: "{{ json_file.content | b64decode | from_json }}"
+
+    - name: Show parsed data
       debug:
-        msg: "{{ my_data }}"
+        var: my_data
