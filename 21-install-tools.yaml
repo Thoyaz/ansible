@@ -17,3 +17,4 @@
       name: "{{ item }}"
       state: started
       enabled: yes
+    loop: "{{ tools }}"
