@@ -1,0 +1,32 @@
+- name: Uninstall Package
+  hosts: localhost
+  connection: local
+  become: yes
+  task:
+  - name: Stop nginx 
+    ansible.builtin.service:
+      name: nginx
+      state: stopped
+
+  - name: Remove (Keep Configuration Files)
+    ansible.builtin.command: sudo apt remove nginx nginx-common
+
+  - name: Purge (Complete Uninstallation)
+    ansible.builtin.command: sudo apt purge nginx nginx-common
+
+  - name: Cleanup Remaining Files
+    ansible.builtin.command: sudo apt autoremove
+
+  - name: Delete Residual Directories
+    ansible.builtin.command: sudo rm -rf /etc/nginx
+
+  - name: Delete Residual Directories
+    ansible.builtin.command: sudo rm -rf /var/log/nginx
+
+  - name: Verify Uninstallation
+    ansible.builtin.command: sudo systemctl status nginx
+    register: nginx_status
+
+  - name: Output
+    ansible.builtin.debug:
+      msg: "{{ nginx_status }}"
