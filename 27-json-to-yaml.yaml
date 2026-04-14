@@ -7,4 +7,4 @@
   tasks:
     - name: convert ubuntu facts json file to xml
       debug:
-        msg: "{{ my_data | ansible.utils.to_xml }}"
+        msg: "{{ my_data }}"
