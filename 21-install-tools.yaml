@@ -5,7 +5,7 @@
   vars:
     tools:
     - nginx
-    - httpd
+    - apache2
   
   tasks:
   - name: install tools
