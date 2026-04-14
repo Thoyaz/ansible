@@ -1,17 +1,10 @@
 - name: Convert JSON to XML
   hosts: localhost
   connection: local
+  vars:
+    my_data: "{{ lookup('ansible.builtin.file', 'ubuntu-facts.json') | from_json }}"
 
   tasks:
     - name: convert ubuntu facts json file to xml
-      set_fact:
-        xml_output: >-
-          {{
-            ansible.utils.to_xml(
-              data=(lookup('file', 'ubuntu-facts.json') | from_json)
-            )
-          }}
-
-    - name: Print XML
       debug:
-        msg: "{{ xml_output }}"
+        msg: "{{ my_data | ansible.utils.to_xml }}"
