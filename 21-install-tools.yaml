@@ -5,7 +5,6 @@
   vars:
     tools:
     - nginx
-    - docker
   
   tasks:
   - name: install tools
