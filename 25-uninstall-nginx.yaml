@@ -9,13 +9,13 @@
       state: stopped
 
   - name: Remove (Keep Configuration Files)
-    ansible.builtin.command: sudo apt remove nginx nginx-common
+    ansible.builtin.command: sudo apt remove nginx nginx-common -y
 
   - name: Purge (Complete Uninstallation)
-    ansible.builtin.command: sudo apt purge nginx nginx-common
+    ansible.builtin.command: sudo apt purge nginx nginx-common -y
 
   - name: Cleanup Remaining Files
-    ansible.builtin.command: sudo apt autoremove
+    ansible.builtin.command: sudo apt autoremove -y
 
   - name: Delete Residual Directories
     ansible.builtin.command: sudo rm -rf /etc/nginx
