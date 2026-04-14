@@ -8,8 +8,8 @@
   tasks:
     - name: read ubuntu facts yaml file
       ansible.builtin.set_fact:
-        ubuntu_fact_data: "{{ lookup('file', 'ubuntu-facts.json') | from_json }}"
+        ubuntu_fact_data: "{{ lookup('file', 'ubuntu-facts.yaml') | from_yaml }}"
     
-    - name: convert Json to YAML
+    - name: convert YAML to JSON
       ansible.builtin.debug:
-        msg: "{{ ubuntu_fact_data | to_nice_yaml }}"
+        msg: "{{ ubuntu_fact_data | to_nice_json }}"
